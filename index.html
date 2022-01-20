@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Webza</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="//fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/styles.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/agate.min.css">
+
+	<style>
+		pre {
+			padding: 0;
+			background-color: transparent;
+		}
+
+		pre code {
+			background-color: transparent;
+			padding: 20px !important;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="NotificationsOrigin">
+		<div class="Notification"></div>
+	</div>
+	<div class="Wrap Origin">
+
+		<header class="Sidepanel">
+			<div class="Sidepanel__top">
+
+				<h1 class="color-white">Webza</h1>
+
+				<hr>
+
+				<nav class="SideNav">
+					<ul>
+						<li><a href="#build">Build</a>
+							<ul>
+								<li><a href="#build-add">Add files</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="#">Variables</a></li> -->
+						<!-- <li><a href="#">Typo</a></li> -->
+						<li><a href="#component">Components</a>
+							<ul>
+								<li><a href="#components-button">Button</a></li>
+								<!-- <li><a href="#components-form">Form</a></li> -->
+								<li><a href="#components-slider">Slider</a></li>
+								<!-- <li><a href="#components-popup">Popup</a></li> -->
+								<li><a href="#components-layout">Layout</a></li>
+							</ul>
+						</li>
+						<li><a href="#utilities">Utilities</a>
+							<ul>
+								<li><a href="#utilities-text">Text</a></li>
+								<li><a href="#utilities-grid">Grid</a></li>
+								<li><a href="#utilities-display">display</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+			<div class="Sidepanel__bottom">
+
+				<a href="mailto:dev@webowski.ru">dev@webowski.ru</a>
+
+			</div>
+		</header>
+
+		<div class="Main">
+
+			<div class="Section container">
+
+				<p class="fz-xl lh-130">The blank for a quick start of the web project.</p>
+
+				<h2 id="build">Build</h2>
+
+				<ul>
+					<li>Install all dependencies by run <code>npm i</code>.</li>
+					<li>Run <code>gulp</code> to build styles, icons, templates and scripts.</li>
+					<li>Run <code>gulp dev</code> to start the development server (е.g. <code>http://localost:3000</code>) and automatically rebuild files when they are changing.</li>
+				</ul>
+
+				<h2 id="build-add-files">Add files</h2>
+
+				<h3>Adding a stylesheet</h3>
+
+				<h5>As separate SCSS or CSS</code></h5>
+
+				<p>Add the path to a stylesheet in <code>build/config.js</code> in <code>styles.separate</code> section</p>
+
+				<pre><code class="scss">styles: {
+	separate: [
+		'path/to/a.scss',
+		'path/to/a.css',
+	]
+}</code></pre>
+
+				<h5>As common SCSS</code></h5>
+
+				<p>Add the path to a stylesheet in <code>styles/common.scss</code></p>
+
+				<h5>As common CSS</h5>
+
+				<p>Add the path to a stylesheet in <code>build/config.js</code> in <code>styles.common</code> section</p>
+
+				<pre><code class="scss">styles: {
+	common: [
+		'path/to/a.css',
+	]
+}</code></pre>
+
+				<!-- <pre><code class="html">&lt;link rel="stylesheet" href="path/to.css" media="nope!" onload="this.media='all'"&gt;</code></pre> -->
+
+				<h3>Adding a script</h3>
+
+				<h5>As separate ESM or UMD</h5>
+
+				<p>Add the script path in <code>build/config.js</code> in <code>styles.separate.esm</code> or <code>styles.separate.umd</code> section</p>
+
+				<pre><code class="javascript">scripts: {
+	separate: {
+		esm: [
+			'path/to/a.esm.js',
+		],
+		umd: [
+			'path/to/a.umd.js',
+		]
+	}
+}</code></pre>
+
+				<h5>As common ESM</h5>
+
+				<p>Import the script in <code>scripts/common.js</code></p>
+
+				<pre><code class="javascript">import './components/esm.js'</code></pre>
+
+				<!-- <pre><code>&lt;script defer="defer" src="path/to.js"&gt;&lt;/script&gt;</code></pre> -->
+
+				<h5>As common UMD</h5>
+
+				<pre><code class="javascript">scripts: {
+	common: {
+		umd: [
+			'path/to/a.umd.js',
+		]
+	}
+}</code></pre>
+
+				<!-- <pre><code>&lt;script defer="defer" src="path/to.js"&gt;&lt;/script&gt;</code></pre> -->
+
+				<h3>Adding an icon</h3>
+
+				<ul>
+					<li>Put the SVG file in folder <code>images/icons</code></li>
+					<li>Run <code>gulp icons</code></li>
+					<li>Copy the svg snippet from <code>images/icons.html</code>
+						<pre><code class="html">&lt;svg&gt;
+	&lt;use xlink:href="#icon"&gt;&lt;/use&gt;
+&lt;/svg&gt;</code></pre>
+
+					</li>
+				</ul>
+
+				<h2 id="naming">CSS naming</h2>
+
+				<p><a href="//webowski.github.io/ubem/" target="_blank">UBEM</a></p>
+
+				<h2 id="components">Components</h2>
+
+				<h3 id="components-slider">Slider</h3>
+
+				<div class="Slider overflow-hidden"
+					data-loop="true"
+					data-speed="200"
+					>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+
+							<div class="swiper-slide">
+								1
+							</div>
+
+							<div class="swiper-slide">
+								2
+							</div>
+
+							<div class="swiper-slide">
+								3
+							</div>
+
+						</div>
+					</div>
+					<div class="swiper-button-prev">
+						<
+					</div>
+					<div class="swiper-button-next">
+						>
+					</div>
+				</div>
+
+				<h3>Button</h3>
+
+				<h5>Simple button</h5>
+
+				<div class="grid">
+					<div class="row gap-sm align-center">
+						<div class="col-24 md:col-18 lg:col-16">
+
+							<pre><code class="html">&lt;button class="Btn"&gt;Simple button&lt;/button&gt;</code></pre>
+
+						</div>
+						<div class="col">
+
+							<button class="Btn">Simple button</button>
+
+						</div>
+					</div>
+				</div>
+
+
+				<h5>Primary button</h5>
+
+				<div class="grid">
+					<div class="row gap-sm align-center">
+						<div class="col-24 md:col-18 lg:col-16">
+
+							<pre><code class="html">&lt;button class="Btn Btn--primary"&gt;Primary button&lt;/button&gt;</code></pre>
+
+						</div>
+						<div class="col">
+
+							<button class="Btn Btn--primary">Primary button</button>
+
+						</div>
+					</div>
+				</div>
+
+				<h2 id="utilities">Utilities</h2>
+
+				<h3 id="utilities-text">Text</h3>
+
+				<pre><code class="html">&lt;span class="fz-400 fw-800 color-major"&gt;&lt;/span&gt;</code></pre>
+
+				<h3 id="utilities-grid">Responsive grid</h3>
+
+				<pre><code class="html">&lt;div class="row  gap-sm lg:gap-md"&gt;
+	&lt;div class="col-12 md:col-4 lg:col-3"&gt;
+
+	&lt;/div&gt;
+	&lt;div class="col-12 md:col-8 lg:col-9"&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+				<h3 id="utilities-display">Display property</h3>
+
+				<pre><code class="html">&lt;div class="d-block md:d-none"&gt;&lt;/div&gt;
+
+&lt;div class="xsOnly:d-none"&gt;Something not for smallest screens&lt;/div&gt;
+
+&lt;div class="print:d-none"&gt;&lt;/div&gt;
+
+&lt;div class="d-flex  justify-start md:justify-between  align-stretch"&gt;
+	&lt;div class="grow-1 shrink-0"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			</div>
+
+			<div class="Footer">
+				<div class="container">
+
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+<script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
+	});
+</script>
+
+<script src="./scripts/bundle.min.js"></script>
+</body>
+</html>

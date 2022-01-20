@@ -1,0 +1,126 @@
+.Comment {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	@include flowMargin;
+	// margin-top: 15px;
+	// margin-bottom: 15px;
+	// background: var(--mutedLightest);
+	// padding: 15px;
+	// border-radius: 3px;
+	// box-shadow: 0 2px 3px rgba(0,0,30, 0.11);
+
+	@include mediaUp(md) {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		// margin-top: 15px;
+		// margin-bottom: 15px;
+	}
+}
+
+.Comment__text {
+	margin-top: 10px;
+	font-size: 15px;
+
+	@include mediaUp(md) {
+		margin-top: 12px;
+		font-size: 16px;
+	}
+}
+
+.Comment__text p {
+	max-width: none;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+.Comment__actions {
+	margin-top: 10px;
+
+	@include mediaUp(md) {
+		margin-top: 12px;
+	}
+}
+
+.LikeDislike {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: default;
+	white-space: nowrap;
+}
+
+.LikeDislike > * {
+	margin-left: 6px;
+}
+
+.LikeDislike > *:first-child {
+	margin-left: 0;
+}
+
+.LikeDislike .Btn {
+
+	@include mediaUp(md) {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}
+
+.CommentReplies {
+	padding-left: 25px;
+	position: relative;
+}
+
+.CommentReplies:before {
+	@include pseudoBlock(0, 100%);
+	left: 5px;
+	border-left: 1px solid $border;
+	transition:
+		border-color $duration;
+}
+
+.CommentReplies:hover:before {
+	border-color: #cacacf;
+}
+
+.CommentReplies__expander {
+	@include buttonReset;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	left: 0px;
+	top: -10px;
+	border: 1px solid $border;
+	border-radius: 2px;
+	background-color: $white;
+	transition:
+		background-color $duration,
+		border-color $duration,
+		color $duration,
+		box-shadow $duration,
+		transform $duration;
+}
+
+.CommentReplies__expander:before {
+	@include pseudoBlock(6px, 2px);
+	background-color: $muted;
+	top: 4px;
+	left: 2px;
+	transition:
+		background-color $duration;
+}
+
+.CommentReplies__expander:after {
+	@include pseudoBlock(200%, 200%);
+	top: -50%;
+	left: -50%;
+}
+
+.CommentReplies__expander:hover {
+	border-color: $brand;
+	background-color: #e9e9e9;
+	box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.CommentReplies__expander:hover:before {
+	background-color: currentColor;
+}

@@ -1,0 +1,151 @@
+@mixin makeColumnReady($gutter: $gap) {
+	width: 100%;
+	padding-right: $gutter * 0.5;
+	padding-left: $gutter * 0.5;
+	box-sizing: border-box;
+}
+
+@mixin makeColumnEq {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+@mixin makeColumnAuto {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@mixin makeColumn($size, $columns: $gridColumns) {
+	flex: 0 0 (math.div($size, $gridColumns) * 100%);
+	max-width: (math.div($size, $gridColumns) * 100%);
+}
+
+@mixin makeColumnAuto {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@mixin flowMargin($margin: 0px, $marginLast: $margin) {
+
+	&:first-child {
+		margin-top: $margin;
+	}
+
+	&:last-child {
+		margin-bottom: $marginLast;
+	}
+}
+
+@mixin listReset($removeMargins: false) {
+	padding-left: 0;
+	list-style-type: none;
+
+	@if $removeMargins == true {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	> li {
+		margin-bottom: 0;
+		padding-left: 0;
+		margin-left: 0;
+		position: static;
+
+		+ li {
+			margin-top: 0;
+		}
+
+		&:before{
+			display: none;
+		}
+	}
+}
+
+@mixin linkReset(){
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@mixin buttonReset(){
+	padding: 0;
+	border: 0 none;
+	appearance: none;
+	box-shadow: none;
+	background: none;
+	cursor: pointer;
+}
+
+@mixin inputReset(){
+	width: auto;
+	min-width: 0;
+	flex-shrink: 1;
+	padding: 0;
+	border: 0 none;
+	appearance: none;
+	box-shadow: none;
+	background: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin pseudoBlock($width: auto, $height: $width) {
+	width: $width;
+	height: $height;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+@mixin visuallyHidden {
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	margin: -1px !important;
+	position: absolute !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0);
+}
+
+@mixin lineClamp($n: 3, $lh: 1.5) {
+	height: calc(1em * var(--lineHeight, #{$lh}) * var(--lines, #{$n}));
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--lines, #{$n});
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	line-height: var(--lineHeight, #{$lh});
+}
+
+@mixin ellipsis() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

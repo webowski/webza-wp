@@ -1,0 +1,21 @@
+.VideoWrap {
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%; /* 16:9 */
+	position: relative;
+	box-sizing: border-box;
+
+	iframe {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-bottom: 0;
+	}
+
+	@include mediaUp(sm) {
+			min-height: 100%;
+	}
+}

@@ -1,0 +1,9 @@
+.ImageWide {
+	display: block;
+	
+	@include mediaDown(md) {
+		margin-left: calc(#{var(--sidePadding)} * -1);
+		margin-right: calc(#{var(--sidePadding)} * -1);
+		max-width: 100vw;
+	}
+}

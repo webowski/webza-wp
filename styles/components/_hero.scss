@@ -1,0 +1,180 @@
+.Hero {
+	height: 800px;
+	min-height: 400px;
+	max-height: calc(100vh - var(--headerHeight));
+	position: relative;
+	z-index: 0;
+	background-color: #6D6D6D;
+	color: $inverse;
+
+	@include mediaUp(md) {
+		min-height: 600px;
+	}
+}
+
+.Hero__container {
+	position: relative;
+	margin-left: calc(var(--sidePadding) * 2);
+	margin-right: calc(var(--sidePadding) * 2);
+	z-index: 3;
+}
+
+.Hero__container.-bottom {
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	bottom: 4rem;
+}
+
+.Hero__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.Hero__bg img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.Hero__scrollIcon {
+	border: 0 none;
+}
+.Hero__scrollIcon:hover .Icon path {
+	animation: none;
+	opacity: 1;
+}
+
+.Hero__scrollIcon .Icon {
+	width: 30px;
+	height: auto;
+	filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+}
+
+.Hero__scrollIcon .Icon path {
+	fill: white;
+	animation: iconScrollDown linear 2.7s;
+	animation-iteration-count: infinite;
+	opacity: .1;
+}
+
+.Hero__scrollIcon .Icon path:nth-child(1) {
+	animation-delay: .30s;
+}
+
+.Hero__scrollIcon .Icon path:nth-child(2) {
+	animation-delay: .15s;
+}
+
+.Hero__scrollIcon .Icon path:nth-child(3) {
+	animation-delay: 0s;
+}
+
+@keyframes iconScrollDown {
+	0% {
+		opacity: 1;
+	}
+	30% {
+		opacity: .25;
+	}
+	100% {
+		opacity: .1;
+	}
+}
+
+.Hero.-estate .Slider {
+	z-index: 1;
+}
+
+.Hero__title {
+	font-weight: 500;
+	color: $inverse;
+	font-size: 2.5rem;
+	line-height: 1.2;
+	letter-spacing: .02em;
+}
+
+.Hero__title.-big {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+.Hero.-estate .Hero__title {
+	max-width: 720px;
+	margin-top: 2.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.Hero.-estate .Hero__badge {
+	display: inline-flex;
+	border-radius: 16px;
+	padding: 10px 16px 8px;
+	background-color: $inverse;
+	color: $intense;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 500;
+}
+
+.Hero.-estate .Hero__footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 3.5rem;
+	left: calc(var(--sidePadding) * 2);
+	right: calc(var(--sidePadding) * 2);
+	z-index: 3;
+	color: $inverse;
+}
+
+.Hero.-estate .Hero__footer > * + * {
+	margin-left: 2.5rem;
+}
+
+.Hero.-frontpage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.Hero.-frontpage:before {
+	@include pseudoBlock(100%);
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.56) 0%, transparent 40%);
+	background-color: rgba(0, 0, 0, 0.15);
+	pointer-events: none;
+	z-index: 2;
+}
+
+.Hero.-frontpage .Hero__container {
+	padding-top: 1rem;
+	padding-bottom: 3rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Hero.-frontpage .Hero__logoBig {
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 358px;
+	filter: drop-shadow(0px 0px 20px rgba(0,0,7,.7));
+	// filter: drop-shadow(0px 10px 50px rgba(0,0,7,.5));
+}
+
+.Hero.-frontpage .Hero__slogan {
+	color: $white;
+	font-family: $fontDecor;
+	font-size: 30px;
+	text-align: center;
+}

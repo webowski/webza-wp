@@ -1,0 +1,14 @@
+.HorizontalScroll {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.HorizontalScroll::-webkit-scrollbar {
+    // width: 0px;
+    height: 0;
+    background: transparent;
+}
+
+.HorizontalScroll::-webkit-scrollbar-thumb {
+    background: transparent;
+}

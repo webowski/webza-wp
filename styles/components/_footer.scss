@@ -1,0 +1,106 @@
+.Footer {
+	cursor: default;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	background-color: #382f3d;
+	color: $white;
+
+	@include mediaUp(md) {
+		padding-top: 48px;
+		padding-bottom: 40px;
+	}
+}
+
+.Footer a {
+	@include linkReset;
+	color: $white;
+}
+
+.Footer a:hover {
+	color: $brand;
+}
+
+.Footer__main {
+	padding-top: 104px;
+	padding-bottom: 104px;
+	background-color: $white;
+}
+
+.Footer__heading {
+	padding-bottom: 1.25rem;
+	margin-bottom: 3rem;
+	border-bottom: 1px solid rgba($intense, .16);
+	font-size: 40px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: $intense;
+	letter-spacing: .04em;
+}
+
+.Footer__menu {
+	@include listReset;
+	font-size: 1.25rem;
+}
+
+.Footer__menu li + li {
+	margin-top: 2rem;
+}
+
+.Footer__menu a {
+	font-weight: 500;
+}
+
+.Footer__menuItemSub {
+	font-size: .875rem;
+}
+
+.Footer__menu2 {
+	font-size: .875rem;
+}
+
+.Footer__menu2 .menu,
+.Footer__menu2 .sitemaps ul {
+	@include listReset();
+	margin-top: 0;
+}
+
+.SocialNav {
+	@include listReset;
+	margin-top: 2rem;
+	display: flex;
+}
+
+.SocialNav li + li {
+	margin-left: 14px;
+}
+
+.SocialNav a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+	border: 2px solid $accent;
+}
+
+.SocialNav a:hover {
+	background-color: $accent;
+}
+
+.SocialNav a .icon {
+	width: 18px;
+	height: 18px;
+}
+
+.Footer__info {
+	margin-top: 3.5rem;
+	font-size: 14px;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid rgba($intense, .16);
+}
+
+.Footer__catalog {
+	padding-top: 6.5rem;
+	padding-bottom: 6.5rem;
+}

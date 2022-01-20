@@ -1,0 +1,45 @@
+svg {
+	width: 24px;
+	height: 24px;
+}
+
+.Icon {
+	height: 1.25rem;
+	width: 1.25rem;
+	display: block;
+	flex-shrink: 0;
+	fill: currentColor;
+	transition:
+		fill $duration--sm,
+		transform $duration--sm,
+		stroke $duration--sm;
+}
+
+.Icon.-stroke {
+	stroke-width: 1.5px;
+	stroke: currentColor;
+	fill: none;
+}
+
+.IconLink {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.IconLink.-shadow {
+	border-radius: 4rem;
+	border: 2px solid $white;
+	box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.Icon.-dummy {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 2.5rem;
+	background-color: #9a9a9a;
+}
+
+.Icon.-metro {
+	fill: #FF0013;
+}

@@ -1,0 +1,47 @@
+@import '../../node_modules/basiclightbox/src/styles/main.scss';
+
+.basicLightbox {
+	background-color: transparent;
+	opacity: 1;
+	transition: background-color $duration--lg;
+	will-change: background-color;
+}
+
+.basicLightbox--visible {
+	background-color: rgba($black,.72);
+}
+
+.basicLightbox__placeholder {
+	transform: scale(.7);
+	opacity: 0;
+	transition:
+		opacity $duration--lg,
+		transform $duration--lg;
+}
+
+.basicLightbox--visible .basicLightbox__placeholder {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.Popup {
+	width: 540px;
+	padding: 2.5rem;
+	background-color: $white;
+}
+
+.Popup__closer {
+	@include buttonReset;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	transition: color $duration--sm;
+}
+
+.Popup__closer:hover {
+	color: $danger;
+}
+
+.Popup__closer + * {
+	margin-top: 0;
+}

@@ -1,0 +1,8 @@
+/node_modules
+/package-lock.json
+/html/
+images/icons.min.svg
+styles/*.min.css
+styles/*.min.css.map
+scripts/*.min.js
+scripts/*.min.js.map

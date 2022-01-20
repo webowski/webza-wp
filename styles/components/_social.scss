@@ -1,0 +1,72 @@
+.SocialSet {
+	display: flex;
+	justify-content: space-between;
+	margin-left: -3px;
+	margin-right: -3px;
+}
+
+.SocialSet .SocialItem {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+@include mediaUp(md) {
+	.SocialSet {
+		margin-left: -4px;
+		margin-right: -4px;
+	}
+
+	.SocialSet .SocialItem {
+		margin-left: 4px;
+		margin-right: 4px;	
+	}
+}
+
+.SocialItem {
+	border-bottom: 0 none;
+	width: 38px;
+	height: 38px;
+	border-radius: 38px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 1px 2px rgba($black, .2);
+}
+
+.SocialItem:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 2px 3px rgba(0,0,0,.23);
+}
+
+.SocialItem .Icon {
+	width: 20px;
+	height: 20px;
+	fill: $white;
+}
+
+.LikeSet {
+	display: flex;
+	justify-content: space-between;
+	margin-left: -3px;
+	margin-right: -3px;
+}
+
+.LikeSet .LikeItem {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.LikeItem {
+	width: 38px;
+	text-align: center;
+	font-weight: 500;
+	line-height: 100%;
+}
+
+.LikeItem__count {
+	margin-top: 2px;
+	color: $muted;
+	font-size: 12px;
+}

@@ -1,0 +1,13 @@
+.Grid {
+	display: grid;
+	gap: 30px;
+}
+
+.Grid.-steps {
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 4rem;
+}
+
+.Grid.-steps .Section.-bgImage {
+	grid-column: span 2;
+}

@@ -1,0 +1,24 @@
+.SortNav {
+	@include listReset(true);	
+	display: flex;
+	font-size: 14px;
+	line-height: 100%;
+	font-weight: 500;
+}
+
+.SortNav li + li {
+	margin-left: 30px;
+}
+
+.SortNav__item {
+	border-bottom: 0 none;
+	color: $major;
+}
+
+.SortNav__item:hover {
+	color: $voice;
+}
+
+.SortNav__item.is-selected {
+	color: $brand;
+}

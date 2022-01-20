@@ -1,0 +1,41 @@
+.Breadcrumbs {
+	display: block;
+	color: $minor;
+	font-size: 14px;
+	text-decoration: underline;
+	text-underline-position: under;
+	text-decoration-color: rgba($major, .24);
+	font-weight: 400;
+}
+
+.Breadcrumbs__item {
+	display: inline;
+}
+
+.Breadcrumbs__item > a span {
+	font-weight: 500;
+}
+
+.Breadcrumbs a {
+	color: $minor;
+	// font-weight: 500;
+	text-decoration-color: rgba($major, .24);
+}
+
+.Breadcrumbs a:hover {
+	text-decoration-color: $major;
+}
+
+.Breadcrumbs.-inverse {
+	color: $white;
+	text-decoration-color: rgba($inverse, .24);
+}
+
+.Breadcrumbs.-inverse a {
+	color: $inverse;
+	text-decoration-color: rgba($inverse, .24);
+}
+
+.Breadcrumbs.-inverse a:hover {
+	text-decoration-color: $inverse;
+}

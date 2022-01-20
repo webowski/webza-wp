@@ -1,0 +1,66 @@
+$pictureRadius: 4px;
+
+.Picture,
+.Picture > img {
+	display: block;
+	border-radius: $pictureRadius;
+}
+
+.Picture.-placeholder {
+	height: 370px;
+	background-color: #D8D8D8;
+}
+
+.Picture.-placeholder.-lg {
+	height: 500px;
+}
+
+.PictureLink {
+	display: block;
+}
+
+.Picture.-thumb {
+	cursor: pointer;
+	position: relative;
+}
+
+.Picture.-thumb:after {
+	@include pseudoBlock;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	border: 2px solid transparent;
+	border-radius: 7px;
+	transition:
+		border-color $duration;
+}
+
+.swiper-slide-thumb-active > .Picture.-thumb:after,
+.Picture.-thumb.is-selected:after {
+	border-color: $voice;
+}
+
+.Slider.-hero .PictureLink,
+.Slider.-hero .PictureLink picture,
+.Slider.-hero .PictureLink picture img {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.Slider .PictureLink picture img {
+	object-fit: cover;
+}
+
+.Slider .PictureLink {
+	pointer-events: none;
+}
+
+.Thumbs {
+	margin-top: 1.5rem;
+	margin-bottom: 2.5rem;
+	display: grid;
+	gap: 30px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}

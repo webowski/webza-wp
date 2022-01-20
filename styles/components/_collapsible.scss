@@ -1,0 +1,9 @@
+.Collapsible {
+	@include flowMargin;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.Collapsible summary::marker {
+	display: block;
+}

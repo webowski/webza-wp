@@ -1,0 +1,57 @@
+.Tooltip {
+	@include linkReset;
+	// @include buttonReset;
+	background: #333;
+	color: white;
+	font-weight: bold;
+	padding: 4px 8px;
+	font-size: 13px;
+	border-radius: 4px;
+	z-index: 110;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity $duration,
+		// transform $duration cubic-bezier(0.4,0.0,1,1),
+		visibility $duration step-end;
+}
+
+.Tooltip[data-show] {
+	opacity: 1;
+	visibility: visible;
+	transform: rotate(90deg);
+	transition:
+		opacity $duration,
+		// transform $duration cubic-bezier(0.4,0.0,1,1),
+		visibility $duration step-start;
+}
+
+.Tooltip [data-popper-arrow],
+.Tooltip [data-popper-arrow]:before {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	z-index: -1;
+}
+
+.Tooltip [data-popper-arrow]:before {
+	content: '';
+	transform: rotate(45deg);
+	background: #333;
+}
+
+.Tooltip[data-popper-placement^='top'] > [data-popper-arrow] {
+	bottom: -4px;
+}
+
+.Tooltip[data-popper-placement^='bottom'] > [data-popper-arrow] {
+	top: -4px;
+}
+
+.Tooltip[data-popper-placement^='left'] > [data-popper-arrow] {
+	right: -4px;
+}
+
+.Tooltip[data-popper-placement^='right'] > [data-popper-arrow] {
+	left: -4px;
+}

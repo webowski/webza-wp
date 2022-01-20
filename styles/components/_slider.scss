@@ -1,0 +1,396 @@
+@import '../../node_modules/swiper/swiper.scss';
+
+.Slider {
+	--containerBorderRadius: 0;
+	position: relative;
+	padding-left: 0rem;
+	padding-right: 0rem;
+	user-select: none;
+}
+
+.Slider .swiper-container {
+	height: 100%;
+	border-radius: var(--containerBorderRadius);
+}
+
+.Slider .swiper-wrapper {
+	align-items: stretch;
+}
+
+.Slider .swiper-slide {
+	height: auto;
+}
+
+// .Slider__prev,
+// .Slider__next {
+// 	width: 2rem;
+// 	height: 3rem;
+// 	cursor: pointer;
+// 	position: absolute;
+// 	top: calc(50% - 24px);
+// 	z-index: 10;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+
+// 	svg {
+// 		width: 26px;
+// 		height: 14.5px;
+// 		display: block;
+// 		fill: #b1b1b1;
+// 	}
+// }
+
+// .Slider__prev {
+// 	left: -40px;
+// }
+
+// .Slider__next {
+// 	right: -40px;
+// }
+
+// .Slider__prev svg {
+// 	transform: rotate(90deg);
+// }
+
+// .Slider__next svg {
+// 	transform: rotate(270deg);
+// }
+
+// .Slider__prev:hover svg,
+// .Slider__next:hover svg {
+// 	fill: var(--brand);
+// }
+
+// .Slider__prev:focus,
+// .Slider__next:focus {
+// 	outline: none;
+// }
+
+
+.Slider.-gallery.-hero {
+	--containerBorderRadius: 0;
+	width: 100%;
+	height: 100%;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.Slider.-hero > .swiper-container {
+	height: 100%;
+}
+
+.Slider.-hero > .swiper-container:before {
+	@include pseudoBlock(510px, 100%);
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(to right, rgba($intense, .32), transparent);
+	pointer-events: none;
+	z-index: 2;
+}
+
+.Slider.-hero > .swiper-container:after {
+	// @include pseudoBlock(100%, 230px);
+	@include pseudoBlock(100%);
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to top, rgba($intense, .56) 0%, transparent 40%);
+	// background-image: linear-gradient(to top, $intense 0%, transparent 40%);
+	background-color: rgba($intense, .15);
+	pointer-events: none;
+	z-index: 2;
+}
+
+
+.Slider.-gallery {
+	--containerBorderRadius: 4px;
+	@include flowMargin;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.Slider.-gallery > .swiper-container {
+	position: relative;
+}
+
+.Slider.-gallery > .swiper-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 1rem;
+	left: 0;
+	right: 0;
+	z-index: 4;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.Slider.-gallery > .swiper-pagination > .swiper-pagination-bullet {
+	margin-left: 4px;
+	margin-right: 4px;
+	height: 2px;
+	width: 80px;
+	max-width: 80px;
+	flex: 1 1 auto;
+	border-radius: 2px;
+	background-color: rgba($inverse, .4);
+	transition: background-color $duration--lg;
+	position: relative;
+	cursor: pointer;
+}
+
+.Slider.-gallery > .swiper-pagination > .swiper-pagination-bullet:before {
+	@include pseudoBlock(100%, 28px);
+	top: -10px;
+	left: 0;
+	background-color: transparent;
+}
+
+.Slider.-gallery > .swiper-pagination > .swiper-pagination-bullet:hover {
+	background-color: $accent;
+	transition: none;
+}
+
+.Slider.-gallery > .swiper-pagination > .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: $inverse;
+}
+
+.Slider.-gallery > .swiper-button-prev,
+.Slider.-gallery > .swiper-button-next {
+	cursor: pointer;
+	width: calc(var(--sidePadding) * 2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
+.Slider.-gallery > .swiper-button-prev {
+	padding-right: 0.5rem;
+	left: 0;
+}
+
+.Slider.-gallery > .swiper-button-next {
+	padding-left: 0.5rem;
+	right: 0;
+}
+
+.Slider.-gallery > .swiper-button-prev,
+.Slider.-gallery > .swiper-button-next {
+	.Icon {
+		height: 48px;
+		width: 25px;
+		fill: rgba($inverse, .4);
+
+		@include mediaUp(xxl) {
+			width: 36px;
+			height: 70px;
+		}
+	}
+
+	&:hover .Icon {
+		fill: $inverse;
+	}
+}
+
+.Slider.-card {
+	position: relative;
+}
+
+.Slider.-card .object-picture {
+	height: 100%;
+}
+
+.Slider.-card .object-picture img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.Slider.-card .slider__more {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: rgba(0,0,15,.65);
+	color: $white;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.Slider.-card .slider__more span {
+	display: block;
+	border-bottom: 1px solid rgba($white,.2);
+	transition: border-color $duration;
+}
+
+.Slider.-card .swiper-button-prev,
+.Slider.-card .swiper-button-next {
+	display: none;
+}
+
+.Slider.-card .swiper-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: .75rem;
+	right: .75rem;
+	bottom: .5rem;
+	z-index: 4;
+}
+
+.Slider.-card .swiper-pagination-bullet {
+	margin-left: 4px;
+	margin-right: 4px;
+	height: 3px;
+	width: 80px;
+	max-width: 80px;
+	flex: 1 1 auto;
+	border-radius: 2px;
+	background-color: rgba($inverse, .4);
+	transition: background-color $duration--lg;
+	position: relative;
+	cursor: pointer;
+}
+
+.Slider.-card .swiper-pagination-bullet:before {
+	// @include pseudoBlock(100%, var(--imageHeight));
+	@include pseudoBlock(100%, 20px);
+	bottom: -10px;
+	left: 0;
+	background-color: transparent;
+}
+
+.Slider.-card .swiper-pagination-bullet:hover {
+	// background-color: $accent;
+	background-color: $inverse;
+	transition: none;
+}
+
+.Slider.-card .swiper-pagination-bullet-active {
+	background-color: $inverse;
+}
+
+
+.Slider.-carousel .swiper-container {
+	height: 100%;
+	overflow: visible;
+}
+
+.Slider.-carousel .swiper-button-prev,
+.Slider.-carousel .swiper-button-next {
+	--swiperClickableWidth: 4.5rem;
+
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: var(--swiperClickableWidth);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	color: rgba($intense, .64);
+
+	.Icon {
+		height: 4.25rem;
+		width: 2.125rem;
+	}
+
+	&:hover {
+		color: $intense;
+	}
+}
+
+.Slider.-carousel .swiper-button-prev {
+	left: calc(-1 * var(--swiperClickableWidth));
+	justify-content: flex-start;
+}
+
+.Slider.-carousel .swiper-button-next {
+	right: calc(-1 * var(--swiperClickableWidth));
+	justify-content: flex-end;
+}
+
+.Slider .swiper-button-prev.-sm,
+.Slider .swiper-button-next.-sm {
+	--swiperClickableWidth: 4.5rem;
+
+	.Icon {
+		height: 2.25rem;
+		width: 1.25rem;
+	}
+}
+
+.Slider.-carousel > .swiper-container > .swiper-wrapper > .swiper-slide {
+	opacity: .16;
+	transition: opacity $duration--xl !important;
+	pointer-events: none;
+}
+
+.Slider.-carousel > .swiper-container > .swiper-wrapper > .swiper-slide.swiper-slide-visible {
+	pointer-events: initial;
+	opacity: 1 !important;
+}
+
+.Slider.-carousel .swiper-button-disabled {
+	pointer-events: none !important;
+	color: rgba($intense, .16);
+}
+
+.Slider.-carousel > .swiper-pagination {
+	margin-top: 2.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 4;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.Slider.-carousel > .swiper-pagination .swiper-pagination-bullet {
+	margin-left: 4px;
+	margin-right: 4px;
+	height: 2px;
+	width: 24px;
+	max-width: 24px;
+	flex: 1 1 auto;
+	border-radius: 2px;
+	background-color: rgba($intense, .16);
+	transition: background-color $duration--lg;
+	position: relative;
+	cursor: pointer;
+}
+
+.Slider.-carousel > .swiper-pagination .swiper-pagination-bullet:before {
+	@include pseudoBlock(100%, 28px);
+	top: -10px;
+	left: 0;
+	background-color: transparent;
+}
+
+.Slider.-carousel > .swiper-pagination .swiper-pagination-bullet:hover {
+	background-color: $accent;
+	transition: none;
+}
+
+.Slider.-carousel > .swiper-pagination .swiper-pagination-bullet-active {
+	background-color: $major;
+}
+
+.Slider.-years .swiper-slide {
+	width: 54px;
+	text-align: center;
+}

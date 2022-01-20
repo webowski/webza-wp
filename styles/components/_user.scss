@@ -1,0 +1,196 @@
+.Avatar {
+	@include linkReset;
+	width: 48px;
+	height: 48px;
+	position: relative;
+	display: block;
+	flex: 0 0 auto;
+}
+
+.Avatar--sm {
+	width: 36px;
+	height: 36px;
+}
+
+.Avatar--md {
+	width: 48px;
+	height: 48px;
+}
+
+.Avatar--lg {
+	width: 48px;
+	height: 48px;
+
+	@include mediaUp(md) {
+		width: 64px;
+		height: 64px;
+	}
+}
+
+.Avatar img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 64px;
+	object-fit: cover;
+	transition: opacity .12s;
+}
+
+a.Avatar:hover img {
+	opacity: .8;
+}
+
+.Avatar__count {
+	padding: 3px 2px 2px;
+	border: 1px solid #e3e3e3;
+	background-color: var(--bg);
+	border-radius: 8px;
+	position: absolute;
+	top: 0px;
+	left: -1px;
+	color: $brand;
+	font-size: 10px;
+	line-height: 1.1;
+	font-weight: bold;
+}
+
+.Avatar__indicator {
+	width: 10px;
+	height: 10px;
+	border: 2px solid var(--bg);
+	position: absolute;
+	bottom: 5px;
+	right: 1px;
+	border-radius: 10px;
+	background-color: var(--muted);
+}
+
+.Avatar__indicator.is-online {
+	background-color: var(--success);
+}
+
+.Avatar--sm {
+	width: 36px;
+	height: 36px;
+}
+
+.Avatar--sm .Avatar__indicator {
+	bottom: 0;
+	right: 0;
+}
+
+.Avatar--lg .Avatar__indicator {
+	bottom: 4px;
+	right: 0px;
+
+	@include mediaUp(md) {
+		bottom: 6px;
+		right: 2px;
+	}
+}
+
+.Avatar--letter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 64px;
+	background-color: $major;
+	color: $white;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.UsersExpo {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include flowMargin;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: default;
+}
+
+.UsersExpo__set .Avatar + .Avatar {
+	margin-left: 19px;
+}
+
+.User {
+	@include linkReset;
+	display: flex;
+	align-items: flex-start;
+	color: var(--intense);
+	font-size: 12px;
+	line-height: 1.1;
+
+	@include mediaUp(md) {
+		align-items: center;
+	}
+}
+
+div.User,
+span.User {
+	cursor: default;
+}
+
+.User__info {
+	font-weight: 500;
+	margin-left: 10px;
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.User__state {
+	margin-top: 3px;
+}
+
+.User__meta {
+	margin-top: 7px;
+}
+
+a.User:hover .Avatar img {
+	opacity: .8;
+}
+
+.User:hover .text-as-link {
+	border-bottom-color: currentColor;
+}
+
+
+.UserShortCard {
+	text-align: center;
+}
+
+.UserShortCard .Avatar {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.UserShortCard h4 {
+	margin-top: 16px;
+	margin-bottom: 7px;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+.UserShortCard h4 a {
+	color: var(--intense);
+}
+
+.UserShortCard h4 a:hover {
+	color: var(--voice);
+}
+
+.UserShortCard__actions {
+	margin-top: 18px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.Separator {
+	align-self: center;
+	display: block;
+	height: 16px;
+	border-left: 1px solid var(--border);
+}

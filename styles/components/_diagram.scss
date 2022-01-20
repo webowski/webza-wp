@@ -1,0 +1,57 @@
+.Diagram {
+	padding: 13px 16px 13px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+	@include flowMargin;
+	margin-top: 11px;
+	margin-bottom: 11px;
+	position: relative;
+	background-color: var(--mutedLightest);
+}
+
+.Diagram__fill {
+	@include pseudoBlock(0, 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--successLight);
+}
+
+.Diagram__caption {
+	position: relative;
+	line-height: 130%;
+}
+
+.Diagram__value {
+	margin-top: 6px;
+	position: relative;
+	font-size: 14px;
+	line-height: 130%;
+	font-weight: bold;
+}
+
+.Diagram .Icon {
+	position: absolute;
+	top: 17px;
+	left: 14px;
+	z-index: 1;
+}
+
+@include mediaUp(md) {
+	.Diagram {
+		padding: 15px 20px 15px 44px;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	.Diagram .Icon {
+		top: 17px;
+		left: 16px;
+	}
+
+	.Diagram__value {
+		margin-top: 0;
+	}
+}

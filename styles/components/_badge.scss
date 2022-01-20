@@ -1,0 +1,32 @@
+.Badge {
+	@include linkReset;
+	display: inline-flex;
+	padding: 4px 12px;
+	border-radius: 1rem;
+	border: 1px solid $border;
+	background-color: rgba($black, .08);
+	color: $major;
+	font-size: .875rem;
+	line-height: 1.2;
+	font-weight: 500;
+	white-space: nowrap;
+	transition:
+		background-color $duration--sm,
+		border-color $duration--sm,
+		color $duration--sm,
+		box-shadow $duration--sm,
+		transform $duration--sm;
+}
+
+.Badge.-accent {
+	background-color: $accent;
+}
+
+.Badge.-inverse {
+	background-color: $inverse;
+	color: $intense;
+}
+
+.Badge.-inverse.-transparent {
+	background-color: rgba($inverse, .64);
+}

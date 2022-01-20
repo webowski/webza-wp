@@ -1,0 +1,23 @@
+.Circle {
+	--circleColor: rgba(0,0,0, .16);
+	width: 4.25rem;
+	height: 4.25rem;
+	border: 1px solid var(--circleColor);
+	border-radius: 4.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	transition:
+		color $duration,
+		border-color $duration,
+		background-color $duration;
+	color: $major;
+	font-size: 1.25rem;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+a.Circle:hover {
+	background-color: var(--circleColor);
+}

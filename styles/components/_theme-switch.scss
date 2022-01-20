@@ -1,0 +1,99 @@
+.ThemeSwitch {
+	position: relative;
+	// width: 145px;
+	// height: 74px;
+	width: 46px;
+	height: 24px;
+	border-radius: 40px;
+	cursor: pointer;
+}
+
+.ThemeSwitch input[type="checkbox"]
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 2;
+}
+
+.ThemeSwitch span
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+	opacity: 1;
+	background-color: var(--muted);
+	border-radius: 40px;
+	transition:
+		$duration ease background-color,
+		$duration ease opacity;
+}
+
+.ThemeSwitch span:before,
+.ThemeSwitch span:after
+{
+	content: '';
+	position: absolute;
+	top: 8px;
+	width: 58px;
+	height: 58px;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	transition:
+		$duration--lg ease transform,
+		$duration ease background-color;
+}
+
+.ThemeSwitch span:before
+{
+	// background-color: var(--inverse);
+	background-color: var(--muted);
+	// transform: translate(-58px,0px);
+	transform: translate(-20px,0px);
+	z-index: 1;
+}
+
+.ThemeSwitch span:after
+{
+	background-color: var(--inverse);
+	// transform: translate(8px,0px);
+	transform: translate(2px,0px);
+	z-index: 0;
+}
+
+.ThemeSwitch input[type="checkbox"]:checked + span
+{
+	background-color: $minor;
+}
+
+.ThemeSwitch input[type="checkbox"]:active + span
+{
+	opacity: 0.5;
+}
+
+.ThemeSwitch input[type="checkbox"]:checked + span:before
+{
+	background-color: $minor;
+	// transform: translate(56px,-19px);
+	transform: translate(20px,-6px);
+}
+
+.ThemeSwitch input[type="checkbox"]:checked + span:after
+{
+	background-color: $white;
+	// transform: translate(79px,0px);
+	transform: translate(24px,0px);
+}

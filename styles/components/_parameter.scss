@@ -1,0 +1,17 @@
+.Param {
+	position: relative;
+}
+
+.Param__title {
+	margin-bottom: .25rem;
+	color: rgba($intense, .4);
+	font-size: .875rem;
+	line-height: 1.125;
+}
+
+.Param__value {
+	color: $intense;
+	font-size: 1.25rem;
+	line-height: 1.125;
+	font-weight: 500;
+}

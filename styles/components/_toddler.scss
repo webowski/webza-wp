@@ -1,0 +1,104 @@
+@import '../../../node_modules/nouislider/dist/nouislider';
+
+$handleHeight:       16px;
+$toddlerPadding:     $handleHeight * 0.5;
+$toddlerColor:       rgba($intense,.16);
+
+.Toddler {
+	--toddlerColor: #{$toddlerColor};
+	$innerPadding: 7px;
+	@include flowMargin($innerPadding);
+	margin-top: calc(1rem + #{$innerPadding});
+	margin-bottom: calc(1rem + #{$innerPadding});
+	border: none;
+	height: 2px;
+	max-width: 100%;
+}
+
+.Toddler .noUi-connect {
+	background-color: var(--toddlerColor);
+}
+
+.Toddler.noUi-target {
+	padding: 0 $toddlerPadding;
+	border-color: transparent;
+	background-color: #efeff1;
+}
+
+.Toddler .noUi-base {
+	cursor: pointer;
+}
+
+.Toddler .noUi-base:before,
+.Toddler .noUi-base:after {
+	@include pseudoBlock($toddlerPadding, 100%);
+	top: 0;
+}
+
+.Toddler .noUi-base:before {
+	left: -$toddlerPadding;
+}
+
+.Toddler .noUi-base:after {
+	left: 100%;
+}
+
+.Toddler.noUi-horizontal .noUi-handle {
+	// width: 24px;
+	// height: 24px;
+	width: $handleHeight;
+	height: $handleHeight;
+	background-color: $white;
+	border-radius: $handleHeight;
+	border: 2px solid var(--toddlerColor);
+	cursor: pointer;
+	box-shadow: none;
+	transition: border-color $duration--sm;
+}
+
+.Toddler.noUi-horizontal .noUi-handle:hover {
+	border-color: $accent;
+}
+
+.Toddler.noUi-horizontal .noUi-handle.noUi-active {
+	border-color: $accent;
+}
+
+.Toddler.noUi-horizontal .noUi-handle:focus {
+	outline: none;
+}
+
+.Toddler.noUi-horizontal .noUi-handle:before {
+	display: none !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--toddlerColor);
+	border: none;
+	border-radius: 7px;
+}
+
+.Toddler.noUi-horizontal .noUi-handle:after {
+	display: none !important;
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	background-color: transparent;
+	// background-color: rgba(0,0,0,.5);
+	cursor: pointer;
+}
+
+.Toddler.noUi-horizontal .noUi-handle {
+	right: -$toddlerPadding !important;
+}
+
+.Toddler .noUi-handle {
+	border-color: #dadada;
+}
+
+.Toddler.noUi-horizontal .noUi-handle {
+	top: (- math.div($handleHeight, 2) + 1);
+}

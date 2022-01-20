@@ -1,0 +1,47 @@
+.Favorite {
+	@include buttonReset;
+	position: relative;
+	z-index: 4;
+	cursor: pointer;
+}
+
+.Favorite .Icon {
+	width: 28px;
+	height: 25px;
+	fill: transparent;
+	stroke: $major;
+	stroke-width: 2px;
+	filter: drop-shadow(0 1px 1.5px rgba(0,0,3,.25));
+}
+
+.Favorite:hover .Icon {
+	stroke: $white;
+}
+
+.Favorite.is-pressed .Icon {
+	stroke: $white;
+	fill: $white;
+}
+
+.Favorite.-inverse .Icon {
+	stroke: $white;
+}
+
+.Favorite.-inverse:hover .Icon {
+	fill: rgba($white, .4)
+}
+
+.Favorite.-inverse.is-pressed .Icon {
+	stroke: $white;
+	fill: $white;
+}
+
+.Favorite.-sm .Icon {
+	width: 20px;
+	height: 18px;
+}
+
+.Favorite.-lg .Icon {
+	width: 35px;
+	height: 31px;
+}

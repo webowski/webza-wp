@@ -1,0 +1,212 @@
+/* Color */
+
+.color-inherit { color: inherit !important }
+
+.color-intense {
+	color: var(--intense) !important;
+}
+
+.color-major {
+	color: var(--major) !important;
+}
+
+.color-minor {
+	color: var(--minor) !important;
+}
+
+.color-muted {
+	color: var(--muted) !important;
+}
+
+.color-disabled {
+	color: var(--disabled) !important;
+}
+
+.color-black {
+	color: var(--black) !important;
+}
+
+.color-white {
+	color: var(--white) !important;
+}
+
+.color-brand {
+	color: var(--brand) !important;
+}
+
+.color-danger {
+	color: var(--danger) !important;
+}
+
+.color-success {
+	color: var(--success) !important;
+}
+
+.color-blue {
+	color: var(--blue) !important;
+}
+
+.color-red {
+	color: var(--red) !important;
+}
+
+.color-current {
+	color: currentColor !important;
+}
+
+.color-voice {
+	color: var(--voice) !important;
+}
+
+/* Fill */
+
+.fill-intense {
+	fill: var(--intense) !important;
+}
+
+.fill-major {
+	fill: var(--major) !important;
+}
+
+.fill-minor {
+	fill: var(--minor) !important;
+}
+
+.fill-muted {
+	fill: var(--muted) !important;
+}
+
+.fill-disabled {
+	fill: var(--disabled) !important;
+}
+
+.fill-black {
+	fill: var(--black) !important;
+}
+
+.fill-white {
+	fill: var(--white) !important;
+}
+
+.fill-brand {
+	fill: var(--brand) !important;
+}
+
+.fill-voice {
+	fill: var(--voice) !important;
+}
+
+.fill-danger {
+	fill: var(--danger) !important;
+}
+
+.fill-success {
+	fill: var(--success) !important;
+}
+
+.fill-blue {
+	fill: var(--blue) !important;
+}
+
+.fill-current {
+	fill: currentColor !important;
+}
+
+/* Stroke */
+
+.stroke-intense {
+	stroke: $intense !important;
+}
+
+.stroke-major {
+	stroke: $major !important;
+}
+
+.stroke-minor {
+	stroke: $minor !important;
+}
+
+.stroke-muted {
+	stroke: $muted !important;
+}
+
+.stroke-disabled {
+	stroke: $disabled !important;
+}
+
+.stroke-black {
+	stroke: $black !important;
+}
+
+.stroke-white {
+	stroke: $white !important;
+}
+
+.stroke-brand {
+	stroke: $brand !important;
+}
+
+.stroke-danger {
+	stroke: $danger !important;
+}
+
+.stroke-success {
+	stroke: $success !important;
+}
+
+.stroke-blue {
+	stroke: $blue !important;
+}
+
+.stroke-current {
+	stroke: currentColor !important;
+}
+
+.stroke-width-2 {
+	stroke-width: 2px;
+}
+
+
+/* Background */
+
+.bg-default {
+	background-color: var(--bg) !important;
+}
+
+.bg-brand {
+	background-color: $brand;
+}
+
+.bg-voice {
+	background-color: $voice;
+}
+
+.bg-mutedLight {
+	background-color: $mutedLight;
+}
+
+.bg-facebook {
+	background-color: #3b5999;
+}
+
+.bg-vkontakte {
+	background-color: #4c75a3;
+}
+
+.bg-odnoklassniki {
+	background-color: #ed812b;
+}
+
+.bg-twitter {
+	background-color: #55acee;
+}
+
+.bg-instagram {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.bg-yandex {
+	background-color: #d82e2e;
+}
+
+.bg-transparent { background-color: transparent !important }

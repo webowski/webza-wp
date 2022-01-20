@@ -1,0 +1,33 @@
+.TextOnImage {
+	width: 100%;
+	max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+	display: block;
+
+	@include mediaUp(xl) {
+	}
+}
+
+.TextOnImage image {
+	width: 100%;
+}
+
+.TextOnImage div[xmlns] {
+	height: 100%;
+	background-color: unset;
+}
+
+.TextOnImage__text {
+	padding-top: 6px;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	color: black;
+	font-size: 30px;
+	line-height: 1;
+	font-family: $fontExtra;
+	word-break: break-word;
+}

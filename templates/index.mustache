@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Webza</title>
+
+	<script>
+		// setting dark vars before DOM content is loading to avoid flicker
+		if (window.localStorage.darkMode === 'true' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			// prioritise local storage light mode over system preference
+
+			if (window.localStorage.darkMode !== 'false') {
+				localStorage.setItem('darkMode', true);
+
+				document.documentElement.style.setProperty('--color-mint', 'hsl(316, 30%, 36%)');
+				document.documentElement.style.setProperty('--color-highlight', 'hsl(240, 33%, 77%)');
+				document.documentElement.style.setProperty('--color-lilac', 'hsl(263, 29%, 32%)');
+				document.documentElement.style.setProperty('--color-sherbet', 'hsl(260, 24%, 18%)');
+				document.documentElement.style.setProperty('--color-light', 'hsl(274, 4%, 15%)');
+				document.documentElement.style.setProperty('--color-light-fade', 'hsl(274, 4%, 16%)');
+				document.documentElement.style.setProperty('--color-light-down', 'hsl(210, 4%, 98%)');
+				document.documentElement.style.setProperty('--color-light-down-2', 'hsl(210, 4%, 95%)');
+				document.documentElement.style.setProperty('--color-light-down-3', 'hsl(210, 4%, 80%)');
+				document.documentElement.style.setProperty('--color-mid', 'hsl(0, 0%, 80%)');
+				document.documentElement.style.setProperty('--color-dark', 'hsl(0, 0%, 98%)');
+				document.documentElement.style.setProperty('--color-dark-down', 'hsl(0, 0%, 98%)');
+			}
+		}
+	</script>
+
+	<link rel="stylesheet" href="/styles/min/common.css">
+</head>
+<body class="G-notLogged G-frontpage" style="--scrollY:0px;">
+
+	{{> partials/header}}
+
+	<main class="Main">
+		<div class="container">
+
+			<div class="grid">
+				<div class="row">
+					<div class="col-24 col-md-12 col-lg-fit col-lg-fr"></div>
+					<div class="col-24 col-md-12 col-lg-fit"></div>
+					<div class="col-24 col-md-12 col-lg-fit"></div>
+				</div>
+			</div>
+
+			<details class="Dropdown w-wide w-full w-md-fit w-lg-100">
+				<summary class="Dropdown__button Btn">Dropdown</summary>
+				<div class="Dropdown__body">
+					<p>Dropdown content</p>
+				</div>
+			</details>
+
+		</div>
+	</main>
+
+	{{> partials/footer}}
+
+	<script src="/scripts/min/common.js"></script>
+</body>
+</html>

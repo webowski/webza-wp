@@ -1,0 +1,302 @@
+.NavMain {
+	z-index: 1;
+}
+
+.NavMain__container {
+	z-index: 1;
+}
+
+.NavMain__items {
+	@include listReset(true);
+	display: flex;
+}
+
+.NavMain__item {
+	font-weight: 500;
+}
+
+.NavMain__item > a {
+	padding-top: 11px;
+	padding-bottom: 8px;
+	position: relative;
+	z-index: 1;
+	display: block;
+	color: $intense;
+	line-height: 1.2;
+	text-transform: uppercase;
+	text-decoration: none !important;
+}
+
+.NavMain__item + .NavMain__item {
+	margin-left: 1rem;
+}
+
+.NavMain__item.-dropdown > a:after {
+	@include pseudoBlock(97px, 2px);
+	border-radius: 2px;
+	background-color: transparent;
+	bottom: 0;
+	left: 0;
+	transition: background-color $duration;
+}
+
+.NavMain__item > a:hover,
+.NavMain__item.is-open > a {
+	color: $intense;
+}
+
+.NavMain__item.-dropdown > a:hover:after {
+	background-color: $accent;
+}
+
+.NavMain__item.-dropdown.is-open > a:after {
+	background-color: $intense;
+}
+
+.NavMain__item > a > span {
+	margin-top: .125rem;
+	display: block;
+	color: rgba($intense, .5);
+	font-size: .8125rem;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.NavMain__item.-favorite {
+	align-self: center;
+}
+
+.NavMain__item.-favorite > a {
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: 0;
+}
+
+.NavMain__item.-favorite > a .Icon {
+	width: 20px;
+	height: 18px;
+	fill: transparent;
+	stroke: lighten($intense, 15);
+	stroke-width: 2px;
+}
+
+.NavMain__dropdown {
+	padding: 60px 74px;
+	position: absolute;
+	top: calc(100% + 1rem);
+	left: 2rem;
+	right: 2rem;
+	background-color: $white;
+	border-radius: 4px;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		visibility 0s linear $duration,
+		transform $duration,
+		opacity $duration;
+}
+
+.NavMain__item.-dropdown.is-open .NavMain__dropdown {
+	visibility: visible;
+	opacity: 1;
+	transition:
+		transform $duration,
+		opacity $duration;
+}
+
+.NavMain__item.-dropdown > a:before {
+	// @include pseudoBlock(17px);
+	@include pseudoBlock(0);
+	top: calc(100% + 16px);
+	left: calc(50% - 10px);
+	// transform: rotate(45deg);
+	// background-color: $white;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid $white;
+
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		visibility 0s linear $duration,
+		transform $duration,
+		opacity $duration;
+}
+
+.NavMain__item.-dropdown.is-open > a:before {
+	visibility: visible;
+	opacity: 1;
+	transition:
+		transform $duration,
+		opacity $duration;
+}
+
+.MenuDropdown__close {
+	@include buttonReset;
+	position: absolute;
+	top: 45px;
+	right: 67px;
+}
+
+.MenuDropdown__close .Icon {
+	width: 34px;
+	height: 34px;
+}
+
+//
+
+.NavMain__list {
+	@include listReset;
+	display: flex;
+	font-weight: 300;
+	font-size: 2rem;
+	line-height: 1.2;
+}
+
+.NavMain__list > .menu-item {
+	width: 400px;
+	flex: 0 0 auto;
+}
+
+.NavMain__list > .menu-item:last-child {
+	width: auto;
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.NavMain__list > .menu-item:first-child {
+	max-width: 360px !important;
+	flex-grow: 1 !important;
+	flex-shrink: 1 !important;
+}
+
+.NavMain__list > .menu-item + .menu-item {
+	margin-left: 2.5rem;
+}
+
+.NavMain__list > .menu-item > a {
+	padding-bottom: 1rem;
+	margin-bottom: 2rem;
+	border-bottom: 2px solid rgba($intense, .16);
+	display: block;
+	position: relative;
+	color: $intense;
+	font-size: 2.5rem;
+	text-decoration: none !important;
+	text-transform: uppercase;
+}
+
+.NavMain__list > .menu-item > a:hover {
+	color: $intense;
+	border-bottom-color: $accent;
+}
+
+.NavMain__list > .menu-item > a[href='#empty'] {
+	pointer-events: none;
+}
+
+.NavMain__list > .menu-item > .sub-menu {
+	@include listReset;
+}
+
+.NavMain__list .sub-menu .menu-item + .menu-item {
+	margin-top: 0.75rem;
+}
+
+.NavMain__list .sub-menu .menu-item a {
+	color: $intense;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 6px;
+}
+
+.NavMain__list .sub-menu .menu-item a:hover {
+	border-bottom-color: $accent;
+	font-weight: 400;
+}
+
+.NavMain__list > li > a > span {
+	margin-top: .125rem;
+	display: block;
+	color: rgba($intense, .5);
+	font-size: .8125rem;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.NavMain__list > li > a > .icon {
+	display: none;
+}
+
+.NavMain__toggle {
+	display: none;
+}
+
+.MenuDropdown {
+	box-shadow: 0	12px 24px rgba($intense, .14);
+}
+
+.MenuDropdown__footer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin-top: 2.5rem;
+}
+
+.Link {
+	cursor: pointer;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	position: relative;
+	display: inline-block;
+	color: $gray;
+	font-size: 1.25rem;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.Link:after {
+	@include pseudoBlock(100%, 2px);
+	border-radius: 2px;
+	background-color: transparent;
+	bottom: 0;
+	left: 0;
+	transition:
+		background-color 0.2s;
+}
+
+.Link:hover {
+	border-bottom-color: #000;
+}
+
+.Link:hover:after {
+	background-color: $major;
+}
+
+.swiper-slide-thumb-active > .Link,
+.Link.is-selected {
+	color: $intense;
+}
+
+.swiper-slide-thumb-active > .Link:after,
+.Link.is-selected:after {
+	background-color: $accent;
+}
+
+
+.ContentsList {
+	@include listReset;
+	font-size: 0.875rem;
+}
+
+.ContentsList ul {
+	@include listReset;
+	padding-left: 1rem;
+}
+
+.ContentsList ul,
+.ContentsList li + li,
+.ContentsList ul li + li {
+	margin-top: 0.4rem;
+}

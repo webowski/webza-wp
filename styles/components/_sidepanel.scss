@@ -1,0 +1,112 @@
+:root {
+	--sidepanelWidth: 250px;
+}
+
+.Sidepanel {
+	height: 100vh;
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	padding: 40px;
+	background-color: #2a212F;
+	color: $white;
+	overflow: auto;
+	cursor: default;
+}
+
+.Sidepanel > * {
+}
+
+.Sidepanel h1 {
+	font-weight: 800;
+}
+
+.Sidepanel hr {
+	margin-top: 1.75rem;
+	margin-bottom: 2rem;
+	border-color: rgba(225,225,255, .25);
+	// border-color: rgba($major, .25);
+	width: 100%;
+}
+
+.Sidepanel a {
+	color: rgba(225,225,255, .55);
+	border-bottom: 0 none;
+	transition: color 1s;
+}
+
+.Sidepanel a:hover {
+	color: var(--white);
+	transition: color .1s;
+}
+
+.Sidepanel__bottom {
+	padding-top: 2rem;
+	margin-top: auto;
+	font-size: .8125rem;
+}
+
+.Sidepanel__bottom a {
+	color: rgba(225,225,255, .4);
+	border-bottom: 0 none;
+}
+
+.Sidepanel__bottom a:hover {
+	color: var(--white);
+}
+
+.SideNav ul {
+	@include listReset;
+	font-size: .875rem;
+	font-size: 1rem;
+	line-height: 1.2;
+}
+
+.SideNav ul ul {
+	margin-top: 10px;
+}
+
+.SideNav ul li {
+	font-weight: 700;
+}
+
+.SideNav ul ul li {
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+.SideNav ul li + li {
+	margin-top: 12px;
+}
+
+.SideNav ul li:before {
+	display: none;
+}
+
+.Sidepanel {
+	padding: 40px;
+	background-color: #2a212F;
+	height: 100vh;
+	width: var(--sidepanelWidth);
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: $white;
+	// color: var(--major);
+	background-color: #540B1C;
+	// background-color: #5352ed;
+	// background-color: #2f3542;
+	background-color: #d4dc0B;
+	background-color: #eccc68;
+	background-color: #ff4757;
+	background-color: #a4b0be;
+	background-color: #57606f;
+	background-color: #2a212f;
+}
+
+.SidepanelOrigin {
+	flex: 0 0 auto;
+	width: var(--sidepanelWidth);
+}

@@ -1,0 +1,50 @@
+.PageNav {
+	@include listReset;
+	@include flowMargin;
+	margin-top: 3rem;
+	margin-bottom: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.PageNav__item + .PageNav__item  {
+	margin-left: 2.5rem;
+}
+
+.PageNav__item a {
+	display: block;
+	padding-bottom: 0.75rem;
+	position: relative;
+	color: rgba($intense, .4);
+	font-size: 1.25rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.PageNav__item a:hover {
+	text-decoration: none;
+	color: $intense;
+}
+
+.PageNav__item.is-current a {
+	color: $intense;
+	pointer-events: none;
+}
+
+.PageNav__item a:after {
+	@include pseudoBlock(100%, 2px);
+	border-radius: 2px;
+	background-color: transparent;
+	bottom: 0;
+	left: 0;
+	transition: background-color $duration;
+}
+
+.PageNav__item a:hover:after {
+	background-color: $accent;
+}
+
+.PageNav__item.is-current a:after {
+	background-color: $intense;
+}

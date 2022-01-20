@@ -1,0 +1,22 @@
+.Map {
+	position: relative;
+	box-shadow: 0 1px 3px rgba(0,0,50,.24);
+}
+
+.Map,
+.ymaps-2-1-78-inner-panes {
+	border-radius: 4px;
+}
+
+.Map.-sm {
+	height: 402px;
+	background-color: #D8D8D8;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+.MapPoint {
+	width: 32px;
+	height: 43px;
+}

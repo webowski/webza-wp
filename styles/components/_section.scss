@@ -1,0 +1,57 @@
+.Section {
+	padding: 40px;
+	background-color: $white;
+}
+
+.Section--bg {
+	background-color: #dae0e6;
+}
+
+.Section {
+	padding-top: 6.5rem;
+	padding-bottom: 6.5rem;
+}
+
+.Section.-special {
+	background-color: $white;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 2px 20px rgba($intense, .04);
+}
+
+hr {
+	@include flowMargin;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	height: 2px;
+	background-color: rgba($intense, .16);
+	border: none;
+	border-radius: 2px;
+}
+
+.Section.-blog {
+	background-color: $white;
+	position: relative;
+	z-index: 1;
+	padding-top: 0;
+	padding-bottom: 0;
+	box-shadow: 0 2px 20px rgba($intense, .04);
+}
+
+.Section.-bgImage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	color: $white;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image:
+		linear-gradient(to right, rgba($black, .48), rgba($black, .48)),
+		url('/wp-content/themes/slrealty/_redesign/media/bg.jpg');
+}
+
+.Section.-rounded {
+	border-radius: 4px;
+}

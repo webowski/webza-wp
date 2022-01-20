@@ -1,0 +1,57 @@
+.w-fit {
+	width: 100% !important;
+	display: block !important;
+}
+
+.w-smDown-fit {
+	@include mediaDown(md) {
+		width: 100% !important;
+		display: block !important;
+	}
+}
+
+.expandLinkArea {
+	position: relative;
+}
+
+.expandLinkArea > a:before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+/* Form */
+
+.formInputStick {
+	display: flex;
+}
+
+.formInputStick > * {
+	margin-left: -1px;
+	border-radius: 0;
+}
+
+.formInputStick > *:first-child {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.formInputStick > *:last-child {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.listReset {
+	@include listReset(true);
+}
+
+.stroke-100 { stroke-width: 1px !important }
+.stroke-150 { stroke-width: 1.5px !important }
+.stroke-200 { stroke-width: 2px !important }
+.stroke-300 { stroke-width: 3px !important }

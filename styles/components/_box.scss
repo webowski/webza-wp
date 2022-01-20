@@ -1,0 +1,138 @@
+:root {
+	--boxPadding:               20px;
+	--boxPadding--sm:           15px;
+
+	@media (--up-sm) {
+		--boxPadding:           25px;
+		--boxPadding--sm:       15px;
+	}
+
+	@media (--up-md) {
+		--boxPadding:           30px;
+		--boxPadding--sm:       20px
+	}
+}
+
+.Box {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	@include flowMargin;
+	padding: var(--boxPadding);
+	background-color: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: .5rem;
+	padding: 1rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (--up-md) {
+		margin-top: 35px;
+		margin-bottom: 35px;
+	}
+}
+
+.Box.-shadowIntense {
+	box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.Box.-brandLight {
+	background-color: rgba(202,158,40, .1);
+	border-width: 0;
+}
+
+[data-theme="dark"] .Box.-brandLight {
+	background-color: rgba(255,255,255,.1);
+}
+
+.Box.-grayLight {
+	background-color: var(--mutedLightest);
+	border-width: 0;
+}
+
+[data-theme="dark"] .Box.-grayLight {
+	background-color: rgba(255,255,255,.1);
+}
+
+.Box.-noFrame {
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+.Box.-sm {
+	padding: var(--boxPadding--sm);
+}
+
+.Box.-lg {
+	padding: 40px;
+}
+
+.Box.-beyond {
+	border-radius: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-left: calc(#{var(--sidePadding)} * -1);
+	margin-right: calc(#{var(--sidePadding)} * -1);
+}
+
+.Box.-sm-beyond {
+	@include mediaDown(md) {
+		border-radius: 0;
+		border-left: 0;
+		border-right: 0;
+		margin-left: calc(#{var(--sidePadding)} * -1);
+		margin-right: calc(#{var(--sidePadding)} * -1);
+	}
+}
+
+
+/* .Box.-xs {
+}
+
+.Box.-xl {
+}
+
+.Box.-xxl {
+}
+
+.Box.-red,
+.Box.-danger {
+	background-color: var(--danger);
+}
+
+.Box.-orange,
+.Box.-alert {
+
+}
+
+.Box.-green,
+.Box.-success {
+
+}
+
+.Box.-border {
+	border: 2px solid #ffa101;
+}
+
+.Box.-stacked {
+	border-radius: 0;
+}
+
+.Box.-stacked + .Box.-stacked {
+	border-top-width: 0px;
+}
+
+.Box.-stackedFirst {
+
+}
+
+.Box.-stackedLast {
+
+}
+ */

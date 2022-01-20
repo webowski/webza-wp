@@ -1,0 +1,16 @@
+.EstateList {
+	display: grid;
+	max-width: 100%;
+
+	@include mediaUp(md) {
+		grid-template-columns: repeat(3, minmax(300px, 360px));
+		gap: 30px;
+	}
+}
+
+.EstateList.-side {
+	@include mediaUp(md) {
+		grid-template-columns: repeat(2, minmax(300px, 360px));
+		gap: 30px;
+	}
+}

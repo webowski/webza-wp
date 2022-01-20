@@ -1,0 +1,44 @@
+.Rating {
+	display: flex;
+}
+
+.Rating .Icon {
+	width: 22px;
+	height: 20px;
+	display: block;
+	fill: currentColor;
+}
+
+.Rating__star {
+	color: var(--mutedLight);
+}
+
+.Rating__star + .Rating__star {
+	margin-left: 6px;
+}
+
+.Rating__star.is-filled {
+	color: var(--brand);
+}
+
+.Rating--success .Rating__star.is-filled {
+	color: var(--success);
+}
+
+.Rating--sm .Icon {
+	width: 14px;
+	height: 12px;
+}
+
+.Rating--sm .Rating__star + .Rating__star {
+	margin-left: 2px;
+}
+
+.Rating--lg .Icon {
+	width: 31px;
+	height: 31px;
+}
+
+.Rating--lg .Rating__star + .Rating__star {
+	margin-left: 6px;
+}

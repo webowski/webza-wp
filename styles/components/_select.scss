@@ -1,0 +1,197 @@
+.CustomSelect {
+	width: 100%;
+	position: relative;
+}
+
+.CustomSelect:focus .CustomSelect__button,
+.CustomSelect:focus-within .CustomSelect__button {
+	background-color: #fff;
+	box-shadow:
+		0 1px 1px 0 rgba(0,0,0,.05),
+		0 0 0 4px rgba(0,0,0,.05);
+	outline: none;
+	color: $major;
+}
+
+.CustomSelect__button {
+	width: 100%;
+	height: auto !important;
+	padding: 0 32px 0 0;
+	position: relative;
+	border: 1px solid #D3D3D3;
+	display: block;
+	background-color: rgba($intense, .02);
+	// background-repeat: no-repeat;
+	// background-position: calc(100% - 16px) 50%;
+	// background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.293099 0.292688C0.683737 -0.0977231 1.3169 -0.0975389 1.70731 0.293099L4.99896 3.58666L8.29397 0.301665C8.68509 -0.0882638 9.31825 -0.0872993 9.70818 0.303819C10.0981 0.694938 10.0971 1.3281 9.70603 1.71803L5.7037 5.70818C5.31293 6.09777 4.68043 6.0972 4.29036 5.7069L0.292688 1.7069C-0.0977231 1.31626 -0.0975389 0.683098 0.293099 0.292688Z' fill='%23006E6F' fill-opacity='0.64'/%3E%3C/svg%3E%0A");
+	appearance: none;
+	border-radius: 48px !important;
+	box-shadow: none;
+	transition:
+		background-color $duration,
+		border-color $duration,
+		color $duration,
+		z-index 0s linear $duration;
+	resize: none;
+	color: $major;
+	font-size: 1rem;
+	line-height: 1.25;
+	font-family: inherit;
+	font-weight: 400;
+	cursor: pointer;
+
+	@include placeholder() {
+		color: rgba($intense, .4);
+	}
+
+	@include mediaUp(md) {
+	}
+}
+
+.CustomSelect__input {
+	@include inputReset;
+	width: 100%;
+	padding: 13px 0 13px 24px;
+	flex-grow: 1;
+	font-size: 1rem;
+	line-height: 1.25;
+}
+
+.CustomSelect__arrow {
+	width: 32px;
+	padding-right: 4px;
+	flex-shrink: 0;
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	right: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.CustomSelect__arrow .Icon {
+	width: 6px;
+	height: 10px;
+	// position: absolute;
+	// right: 18px;
+	// top: calc(50% - 5px);
+	fill: $voice;
+	transform: rotate(90deg);
+	transition:
+		transform $duration--sm;
+}
+
+.CustomSelect__dropdown {
+	max-height: 190px;
+	overflow-y: auto;
+	position: absolute;
+	left: 24px;
+	right: 24px;
+	top: calc(100%);
+	background-color: $white;
+	// border-top: 1px solid $mutedLight;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .24);
+	border-radius: 0 0 3px 3px;
+	z-index: 5;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		visibility 0s linear $duration,
+		opacity $duration;
+	scrollbar-color: $mutedLight transparent;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $mutedLight;
+	}
+}
+
+.CustomSelect.is-open {
+	z-index: 5;
+	transition:
+		background-color $duration--sm,
+		border-color $duration--sm,
+		color $duration--sm;
+}
+
+.CustomSelect.is-open .CustomSelect__arrow .Icon {
+	transform: rotate(270deg);
+}
+
+.CustomSelect.is-open .CustomSelect__dropdown {
+	visibility: visible;
+	opacity: 1;
+	transition:
+		opacity $duration--sm;
+}
+
+.CustomSelect__list {
+	font-size: .875rem;
+}
+
+.CustomSelect__item {
+	padding: 5px 12px;
+	cursor: pointer;
+}
+
+.CustomSelect__item:hover {
+	background-color: $mutedLightest;
+}
+
+.TagsList {
+	margin: .5rem .75rem 0;
+}
+
+.TagsList .Tag {
+	margin: 2px;
+}
+
+.Tag {
+	max-width: 100%;
+	border-radius: 32px;
+	padding: 4px;
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	background-color: $yellow;
+	font-size: .875rem;
+	line-height: 1.2;
+	font-weight: 500;
+	user-select: none;
+}
+
+.Tag__text {
+	margin: .25rem .5rem;
+	@include ellipsis;
+}
+
+.Tag__x {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 24px;
+	background-color: rgba($white, .64);
+	cursor: pointer;
+}
+
+.Tag__x:hover {
+	background-color: $white;
+}
+
+.Tag__x .Icon {
+	width: 10px;
+	height: 10px;
+	fill: rgba($black, .64);
+}

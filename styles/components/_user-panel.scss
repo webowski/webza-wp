@@ -1,0 +1,172 @@
+.UserPanel {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.UserPanel__caption {
+	color: $red;
+	font-size: 12px;
+	line-height: 100%;
+	font-weight: 500;
+	text-align: right;
+}
+
+.UserPanel > * {
+	margin-left: 12px;
+}
+
+.UserPanel > *:first-child {
+	margin-left: 0;
+}
+
+.UserPanel__icon {
+	width: 24px;
+	height: 24px;
+	color: var(--major);
+}
+
+a.UserPanel__icon:hover {
+	 color: var(--voice) !important;
+}
+
+.UserDropdown {
+	width: 100%;
+	display: block;
+	margin-right: -1px;
+	z-index: 76;
+
+	@include mediaUp(md) {
+		width: auto;
+		position: relative;
+	}
+}
+
+.UserDropdown.is-open {
+	.UserDropdown__button,
+	.UserDropdown__button:active {
+		box-shadow: none !important;
+	}
+
+	@include mediaUp(md) {
+		filter: drop-shadow(0 0 10px rgba(0,0,0,.2));
+	}
+}
+
+.UserDropdown__button {
+	@include buttonReset;
+	padding: 12px 8px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: none;
+
+	@include mediaUp(md) {
+		padding-right: 3px;
+	}
+}
+
+.UserDropdown__button:active {
+	box-shadow: none !important;
+}
+
+.UserDropdown.is-open .UserDropdown__button {
+	background-color: var(--bg);
+}
+
+.UserDropdown__button .Icon {
+	margin-left: 8px;
+	fill: var(--intense);
+	transition: transform $duration--sm;
+
+	@include mediaDown(md) {
+		display: none;
+	}
+}
+
+.UserDropdown.is-open .UserDropdown__button .Icon {
+	transform: rotate(180deg);
+}
+
+.UserDropdown__close {
+	@include buttonReset;
+	padding: 10px;
+	position: fixed;
+	top: 8px;
+	right: 9px;
+	z-index: 110;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity $duration,
+		transform $duration cubic-bezier(0.4,0.0,1,1),
+		visibility $duration step-end;
+
+	@include mediaUp(md) {
+		display: none;
+	}
+}
+
+.UserDropdown.is-open .UserDropdown__close {
+	opacity: 1;
+	visibility: visible;
+	transform: rotate(90deg);
+	transition:
+		opacity $duration,
+		transform $duration cubic-bezier(0.4,0.0,1,1),
+		visibility $duration step-start;
+}
+
+.UserDropdown__body {
+	min-width: 330px;
+	height: 100vh;
+	padding: 60px 30px 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 76;
+	background-color: var(--bg);
+	visibility: hidden;
+	font-size: 14px;
+
+	@include mediaDown(md) {
+		width: 100vw;
+		max-width: 400px;
+		overflow-y: auto;
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			opacity $duration,
+			transform $duration,
+			visibility 0s linear $duration;
+		will-change: opacity, transform;
+		transform: translateY(-20px);
+	}
+
+	@include mediaUp(md) {
+		height: auto;
+		padding: 20px 30px 10px;
+		top: 100%;
+	}
+}
+
+.UserDropdown.is-open .UserDropdown__body {
+	visibility: visible;
+
+	@include mediaDown(md) {
+		opacity: 1;
+		z-index: 100;
+		transition:
+			opacity $duration,
+			transform $duration;
+		transform: translateY(0);
+	}
+}
+
+.UserDropdown__settings {
+	margin-right: -10px;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}

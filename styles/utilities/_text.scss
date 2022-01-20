@@ -1,0 +1,191 @@
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-baseline {
+	vertical-align: baseline !important;
+}
+
+.text-middle {
+	vertical-align: middle !important;
+}
+
+.text-top {
+	vertical-align: top !important;
+}
+
+.text-bottom {
+	vertical-align: bottom !important;
+}
+
+@include mediaUp(sm) {
+	.sm\:text-left {
+		text-align: left !important;
+	}
+
+	.sm\:text-right {
+		text-align: right !important;
+	}
+
+	.sm\:text-center {
+		text-align: center !important;
+	}
+}
+
+@include mediaUp(md) {
+	.md\:text-left {
+		text-align: left !important;
+	}
+
+	.md\:text-right {
+		text-align: right !important;
+	}
+
+	.md\:text-center {
+		text-align: center !important;
+	}
+}
+
+
+.fw-300 {
+	font-weight: 300 !important;
+}
+
+.fw-400 {
+	font-weight: 400 !important;
+}
+
+.fw-500 {
+	font-weight: 500 !important;
+}
+
+.fw-600 {
+	font-weight: 600 !important;
+}
+
+.fw-700 {
+	font-weight: 700 !important;
+}
+
+.fw-800 {
+	font-weight: 800 !important;
+}
+
+.fs-normal { font-style: normal !important }
+.fs-italic { font-style: italic !important }
+
+.case-upper,
+.text-uppercase {
+	text-transform: uppercase !important;
+	letter-spacing: .05em !important;
+}
+
+.case-lower,
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+
+.case-capital,
+.text-capitalize {
+	text-transform: capitalize !important;
+}
+
+.case-normal {
+	text-transform: none !important;
+	letter-spacing: 0 !important;
+}
+
+
+.fz-inherit { font-size: inherit !important }
+.fz-050 { font-size: 0.50rem !important }
+.fz-0625 { font-size: 0.625rem !important }
+.fz-075 { font-size: 0.75rem !important }
+.fz-08125 { font-size: 0.8125rem !important }
+.fz-0875 { font-size: 0.875rem !important }
+.fz-100 { font-size: 1.00rem !important }
+.fz-125 { font-size: 1.25rem !important }
+.fz-150 { font-size: 1.50rem !important }
+.fz-200 { font-size: 2.00rem !important }
+.fz-250 { font-size: 2.50rem !important }
+.fz-300 { font-size: 3.00rem !important }
+.fz-400 { font-size: 4.00rem !important }
+.fz-500 { font-size: 5.00rem !important }
+
+.lh-inherit { line-height: inherit !important }
+.lh-075 { line-height: 0.75 !important; }
+.lh-100 { line-height: 1.00 !important; }
+.lh-105 { line-height: 1.05 !important; }
+.lh-110 { line-height: 1.10 !important; }
+.lh-115 { line-height: 1.15 !important; }
+.lh-120 { line-height: 1.20 !important; }
+.lh-125 { line-height: 1.25 !important; }
+.lh-130 { line-height: 1.30 !important; }
+.lh-135 { line-height: 1.35 !important; }
+.lh-140 { line-height: 1.40 !important; }
+.lh-145 { line-height: 1.45 !important; }
+.lh-150 { line-height: 1.50 !important; }
+.lh-157 { line-height: 1.57 !important; }
+
+.lsp-005 { letter-spacing: 0.05em !important }
+.lsp-010 { letter-spacing: 0.10em !important }
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+:where(.flow-050) p {
+	@include flowMargin;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+.link-asText {
+	color: inherit;
+}
+
+.link-asText:hover {
+	text-decoration: none;
+	color: $voice;
+}
+
+.listReset {
+	@include listReset(true);
+}
+
+.textButton {
+	cursor: pointer;
+	color: var(--brand);
+}
+
+.nums-tabular {
+	font-variant-numeric: tabular-nums !important;
+}
+
+.lineClamp {
+	@include lineClamp;
+}
+
+.p-sm {
+	@include flowMargin;
+	margin-top: .75rem;
+	margin-bottom: .75rem;
+	font-size: .875rem;
+}
+
+.marker-success > li::marker {
+	color: $success;
+}

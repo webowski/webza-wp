@@ -1,0 +1,58 @@
+.Toggle {
+	--borderRadius: 32px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.Toggle input {
+	@include visuallyHidden;
+}
+
+.Toggle__caption {
+	min-height: 3rem;
+	min-width: 3rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	font-size: 1rem;
+	line-height: 1.2;
+	font-weight: 500;
+	color: #026D6E;
+	background-color: #E5E5E5;
+	border-radius: var(--borderRadius);
+}
+
+.Toggle.is-checked .Toggle__caption,
+.Toggle input:checked ~ .Toggle__caption {
+	color: $white;
+	background-color: #026D6E;
+}
+
+.Toggle.-sm .Toggle__caption {
+	min-height: 2rem;
+	min-width: 2rem;
+	padding: 8px 12px;
+	font-size: .875rem;
+	line-height: 1.15;
+}
+
+.ToggleGroup {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.ToggleGroup > .Toggle {
+	--borderRadius: 0;
+}
+
+.ToggleGroup > .Toggle:first-child {
+	--borderRadius: 32px 0 0 32px;
+}
+
+.ToggleGroup > .Toggle:last-child {
+	--borderRadius: 0 32px 32px 0;
+}

@@ -1,0 +1,120 @@
+// Text
+// ---------------------
+$fontSans:                  'Rubik', sans-serif;
+$fontSerif:                 'Times New Roman', Georgia, serif;
+$fontMono:                  'Ubuntu Mono', monospace;
+// $fontExtra:                 $fontNarrow;
+$fontMain:                  $fontSans;
+$fontSize:                  16px;
+$lineHeight:                1.50;
+$rem:                       16px;
+
+
+// Colors
+// ---------------------
+// absolute colors
+$white:                     #fff;
+$whiteDark:                 #e9ebf2;
+$black:                     #090914;
+$gold:                      #ca9e28;
+$blue:                      #4974c2;
+$blueLight:                 lighten($blue, 10);
+$blueLightest:              #e9f6fd;
+$red:                       #db4815;
+$green:                     #55b43c;
+$greenLight:                #d1ebcb;
+$grayDarkest:               #323239;
+$grayDark:                  #555559;
+$gray:                      #6c6c6c;
+$grayLight:                 #d7d7d7;
+$grayLightest:              #f5f5f5;
+
+// theme colors
+$brand:                     $blue;
+$brandLight:                $blueLight;
+$voice:                     $blue;
+$voiceLightest:             $blueLightest;
+// $voiceLight:                     $blueLight;
+$success:                   $green;
+$successLight:              $greenLight;
+$danger:                    $red;
+$accent:                    $gold;
+$intense:                   $black;
+$major:                     $grayDarkest;
+$minor:                     $gray;
+$muted:                     #92929a;
+$mutedLight:                $grayLight;
+$mutedLightest:             $grayLightest;
+$disabled:                  $grayLight;
+$inverse:                   $white;
+$bg:                        $white;
+$bgAlter:                   #ebebef;
+$border:                    #c4c4cd;
+
+
+// Shapes
+// ---------------------
+ $borderRadius:             4px;
+
+
+// Breakpoints
+// ---------------------
+$xs:    0;
+$sm:    576px;
+$md:    768px;
+$lg:    992px;
+$xl:    1200px;
+$xxl:   1600px;
+
+$breakpoints: (
+	xs: $xs,
+	sm: $sm,
+	md: $md,
+	lg: $lg,
+	xl: $xl,
+	xxl: $xxl,
+);
+
+
+// Container
+// ---------------------
+$sidePadding--xs:           16px;
+$sidePadding--sm:           20px;
+$sidePadding:               32px;
+$containerMax:              1140px + ($sidePadding * 2);
+
+
+// Grid
+// ---------------------
+$gridColumns:               24;
+$gap:                       30px;
+$gap-xxs:                   8px;
+$gap-xs:                    12px;
+$gap-sm:                    20px;
+$gap-md:                    $gap;
+$gap-lg:                    48px;
+$gap-xl:                    60px;
+
+
+//  Spacing
+// ---------------------
+$spacer:                    10px;
+
+
+// Transition & Animation
+// ---------------------
+$duration--sm:               .12s;
+$duration:                   .2s;
+$duration--lg:               .3s;
+$duration--xl:               .6s;
+$duration--xxl:              1s;
+
+
+// Libraries
+// ---------------------
+
+// basicLightbox
+$basicLightbox__background: rgba(0, 0, 0, .8);
+$basicLightbox__zIndex:     1000;
+$basicLightbox__duration:   $duration--lg;
+$basicLightbox__timing:     linear;

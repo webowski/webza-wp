@@ -1,0 +1,92 @@
+.MessageForm {
+	margin-top: 18px;
+	margin-bottom: 18px;
+
+	@include mediaUp(md) {
+		display: flex;
+	}
+}
+
+.MessageForm__message {
+	position: relative;
+	flex: 1 1 auto;
+	border: 1px solid $border;
+	border-radius: 6px;
+	background-color: $grayLightest;
+	padding: 20px 28px;
+	margin-top: 10px;
+
+	@include mediaUp(md) {
+		margin-top: 0;
+		margin-left: 20px;
+	}
+}
+
+.MessageForm__arrow {
+	width: 15px;
+	height: 20px;
+	position: absolute;
+	left: -15px;
+	top: 16px;
+	overflow: hidden;
+	// clip: rect(0px, 20px, 20px, 0px);
+
+	@include mediaUp(md) {
+
+	}
+}
+
+.MessageForm__arrow:after {
+	@include pseudoBlock(20px);
+	background-color: $grayLightest;
+	border: 1px solid $border;
+	transform: skew(50deg);
+	top: 0;
+	left: 11px;
+
+	@include mediaUp(md) {
+		
+	}
+}
+
+.MessageForm__message .FormLabel {
+	left: 28px;
+}
+
+.MessageForm__message.FormField--complex.has-focus .FormLabel,
+.MessageForm__message.FormField--complex.has-value .FormLabel {
+    transform: scale(.765) translateY(-12px);
+    color: $muted;
+}
+
+.MessageForm__message .FormInput {
+	height: 106px;
+	padding: 0;
+	border: 0;
+	margin-bottom: 10px;
+	background-color: transparent;
+}
+
+.MessageForm__message.FormField--complex.has-value .FormInput {
+	background-color: transparent;
+}
+
+.MessageForm__actions {
+	padding: 0px;
+	margin-top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.MessageForm__actions .Btn {
+	letter-spacing: 0;
+}
+
+.MessageForm__avatar {
+	
+}
+
+.MessageForm__submit {
+	width: 192px;
+}

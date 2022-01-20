@@ -1,0 +1,38 @@
+.Details {
+	@include flowMargin;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	position: relative;
+}
+
+.Details[open] {
+	margin-top: 1rem !important;
+}
+
+.Details summary {
+	display: block;
+	color: $turquoise;
+	cursor: pointer;
+}
+
+.Details > summary .Icon {
+	transform: rotateZ(90deg);
+	top: -1px;
+	position: relative;
+	margin-right: 2px;
+}
+
+.Details[open] > summary .Icon {
+	transform: rotateZ(270deg);
+}
+
+.Details.-onBottom {
+	margin-top: 0;
+	padding-bottom: 2rem;
+}
+
+.Details.-onBottom > summary {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}

@@ -1,0 +1,56 @@
+.Filter {
+	margin-bottom: 4rem;
+	padding-top: 2rem;
+	padding-bottom: 3rem;
+	background-color: $white;
+	box-shadow: 0 2px 20px rgba($black, .04);
+}
+
+.Filter__heading {
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-align: center;
+}
+
+.Filter__actions {
+	margin-top: 1.5rem;
+}
+
+.Filter__grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 30px;
+}
+
+.Filter__actions {
+	grid-column: span 2;
+}
+
+.Filter__grid > .FormField {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.Filter.-stack {
+	padding: 1.25rem 1rem 2rem;
+}
+
+.Filter.-stack .Filter__grid {
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.Filter.-stack .Filter__actions {
+	margin-top: 1rem;
+	grid-column: span 1;
+}
+
+
+.Filter.-bare {
+	box-shadow: none;
+	padding: 0;
+	background-color: transparent;
+}
